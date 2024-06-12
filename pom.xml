@@ -47,7 +47,7 @@
     <maven-compiler.version>3.6.1</maven-compiler.version>
     <maven-site.version>4.0.0-M15</maven-site.version>
     <maven-surefire-report.version>3.2.5</maven-surefire-report.version>
-    <maven-war.version>3.0.0</maven-war.version>
+    <maven-war.version>3.3.1</maven-war.version>
     
     <!-- Web Servlet Properties -->
     <servlet-api.version>3.1.0</servlet-api.version>
@@ -93,6 +93,9 @@
           <warName>${project.artifactId}</warName>
           <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
           <failOnMissingWebXml>false</failOnMissingWebXml>
+          <addOpens>
+            <addOpen>java.base/java.util=ALL-UNNAMED</addOpen>
+          </addOpens>
         </configuration>
       </plugin>
       
