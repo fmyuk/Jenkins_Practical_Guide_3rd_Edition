@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class SampleDTO implements Serializable {
 
     /**
-     * SerialVersion UID
+     * SerialVersion UID.
      */
     private static final long serialVersionUID = -6675115263648618124L;
     /**
