@@ -5,6 +5,8 @@ import javax.servlet.http.HttpSession;
 
 import jp.gihyo.jenkinsbook.dto.SampleDTO;
 
+import java.util.Calendar;
+
 /**
  * DTO class for SampleServlet.
  */
@@ -27,6 +29,7 @@ public class SampleAction {
 
     /**
      * Constructor of SampleAction.
+     *
      * @param fstName first name of the user
      * @param lstName last name of the user
      */
@@ -37,6 +40,7 @@ public class SampleAction {
 
     /**
      * Check parameter of http servlet request.
+     *
      * @param request HttpServletRequest
      * @return check result
      */
@@ -57,11 +61,20 @@ public class SampleAction {
 
     /**
      * Execute action.
+     *
      * @param request HttpServletRequest
      * @return result jsp file path
      */
     public final String execute(final HttpServletRequest request) {
         SampleDTO dto = new SampleDTO(firstName, lastName);
+
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        if (hour < 12) {
+            dto.setMessage("Good morning");
+        } else {
+            dto.setMessage("Good afternoon");
+        }
 
         HttpSession session = request.getSession(true);
         session.setAttribute("dto", dto);
