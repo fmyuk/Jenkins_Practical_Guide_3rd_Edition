@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'checkstyle'
-    id 'com.github.spotbugs' version '4.7.0'
+    id 'com.github.spotbugs' version '4.2.3'
     id 'jacoco'
     id 'war'
 }
@@ -38,7 +38,7 @@ checkstyleTest {
 }
 
 spotbugs {
-    toolVersion = '4.0.0'
+    toolVersion = '4.2.3'
 }
 
 spotbugsMain {
